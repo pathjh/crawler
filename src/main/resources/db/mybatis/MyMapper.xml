@@ -13,7 +13,7 @@
         DELETE FROM LINKS_TO_BE_PROCESSED where link=#{link}
     </delete>
     <insert id="insertNews" parameterType="com.github.hcsp.News">
-        insert into news (url,title,CONTENT,CREATED_AT,MODIFIED_AT)
+        insert into NEWS (url,title,CONTENT,CREATED_AT,MODIFIED_AT)
         values ( #{url},#{title},#{content},now(),now() )
     </insert>
     <select id="countLink" parameterType="String" resultType="int">
@@ -25,14 +25,14 @@
         insert into
         <choose>
             <when test="tableName == 'links_already_processed'">
-                links_already_processed
+                LINKS_ALREADY_PROCESSED
             </when>
             <otherwise>
-                links_to_be_processed
+                LINKS_TO_BE_PROCESSED
             </otherwise>
         </choose>
         (link)
-        values #{link}
+        values (#{link})
 
     </insert>
 </mapper>
