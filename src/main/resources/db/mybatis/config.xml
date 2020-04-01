@@ -10,7 +10,7 @@
 <!--                <property name="driver" value="org.h2.Driver"/>-->
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
 <!--                <property name="url" value="jdbc:h2:file:C:\Users\Administrator\Documents\GithubData\crawler\news"/>-->
-                <property name="url" value="jdbc:mysql://192.168.99.100:3306/news?characterEncoding=utf8"/>
+                <property name="url" value="jdbc:mysql://192.168.99.100:3306/news?characterEncoding=utf-8"/>
                 <property name="username" value="root"/>
                 <property name="password" value="root"/>
             </dataSource>
@@ -20,3 +20,4 @@
         <mapper resource="db/mybatis/MyMapper.xml"/>
     </mappers>
 </configuration>
+<!--        ?characterEncoding=utf-8-->
